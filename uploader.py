@@ -262,7 +262,7 @@ def main():
         fail_count = 0
         try:
             file_id = extract_drive_id(job["drive_link"])
-            gdown.download(id=file_id, output=vid_path, quiet=False, fuzzy=True)
+            gdown.download(id=file_id, output=vid_path, quiet=False)
             verify_valid_mp4(vid_path)
             mb = round(os.path.getsize(vid_path) / (1024 * 1024), 1)
             logs.append(f"Drive({mb}MB)")
